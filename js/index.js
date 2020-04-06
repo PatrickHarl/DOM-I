@@ -46,8 +46,6 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //nav
 
-console.log(Object.keys(siteContent.nav).length);
-
 let navSec = document.querySelectorAll('nav a');
 
 for (let i = 0; i < Object.keys(siteContent.nav).length - 1; i++)
@@ -55,8 +53,28 @@ for (let i = 0; i < Object.keys(siteContent.nav).length - 1; i++)
 
   const contentNav = Object.values(siteContent.nav);
   navSec[i].textContent = contentNav[i];
+  navSec[i].style.color = 'green';
 
 }
+
+//prepend and append
+
+let navParent = document.querySelector('nav');
+
+let prependEle = document.createElement('a');
+prependEle.href = "#";
+prependEle.textContent = "Prepend";
+prependEle.style.color = "green";
+
+navParent.prepend(prependEle);
+
+let appendEle = document.createElement('a');
+appendEle.href = "#";
+appendEle.textContent = "Append";
+appendEle.style.color = "green";
+
+navParent.appendChild(appendEle);
+
 
 //cta
 let ctaHeader = document.querySelector('.cta h1');
