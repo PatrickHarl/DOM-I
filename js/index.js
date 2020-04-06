@@ -77,11 +77,31 @@ navParent.appendChild(appendEle);
 
 
 //cta
+let cta = document.querySelector('.cta-text');
+
+let updateBtn = document.createElement('button');
+updateBtn.textContent = "Update On Click";
+updateBtn.style.backgroundColor = "green";
+updateBtn.style.color = "white";
+updateBtn.id = "update-btn";
+
+cta.append(updateBtn);
+
 let ctaHeader = document.querySelector('.cta h1');
+
+updateBtn.addEventListener('click', () => {
+
+  ctaHeader.textContent = "Here is Some Updated Text!";
+
+})
+
 ctaHeader.textContent = siteContent["cta"]["h1"];
+ctaHeader.style.color = "darkgreen";
 
 let ctaButton = document.querySelector('.cta button');
 ctaButton.textContent = siteContent["cta"]["button"];
+ctaButton.style.backgroundColor = "green";
+ctaButton.style.color = "white";
 
 let ctaImg = document.getElementById('cta-img');
 ctaImg.src = siteContent["cta"]["img-src"];
